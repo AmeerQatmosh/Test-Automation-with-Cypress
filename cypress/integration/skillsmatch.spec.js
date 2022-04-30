@@ -63,13 +63,13 @@ describe('cypress-xpath', () => {
 
     // Search feature 
 
-    /*
+    
     it('Search feature',()=>{
         cy.xpath("//a[normalize-space()='Search']").click()
         cy.xpath("//span[@role='textbox']").type('software')
         cy.xpath("//button[normalize-space()='Search']").click()
         cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()
 
-    })*/
+    })
   })
 })
