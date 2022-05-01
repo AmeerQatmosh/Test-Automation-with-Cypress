@@ -1,6 +1,3 @@
-/// <reference types="cypress-xpath" />
-/// <reference path="..\..\node_modules\cypress-xpath\src\index.d.ts" />
-
 describe('cypress-xpath', () => {
     context('elements', ()=>{
     beforeEach(() =>{
@@ -120,10 +117,20 @@ it('Search in the title of the course ',()=>{
 
     })
     
+   
+    it('Search feature translate',()=>{
+        cy.xpath("//a[normalize-space()='Search']").click()
+        cy.xpath("//a[@class='collapsed card-link']").click()
+        cy.xpath("//select[@id='translateInput']").select(1)
+        cy.xpath("//span[@role='textbox']").type('برمجيات')
+        cy.xpath("//button[normalize-space()='Search']").click()
+        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software')
+
     })
-    
-      
+
+   
+       
   
 
-
+})
 })
