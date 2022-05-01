@@ -11,7 +11,7 @@ describe('cypress-xpath', () => {
         })
     
     // Update my skills
-/*
+
     it('Update my skills',()=>{
         cy.xpath("//a[@href='/en/profile/']").click()
         cy.xpath("//a[@role='button'][normalize-space()='Update my skills']").click()
@@ -71,8 +71,7 @@ describe('cypress-xpath', () => {
         cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()
 
     })
-*/
- /* 
+
   it('Search in the title of the course ',()=>{
     cy.xpath("//a[normalize-space()='Search']").click()
     cy.xpath("//span[@role='textbox']").type('Diploma in Information Technology')
@@ -89,8 +88,8 @@ describe('cypress-xpath', () => {
         cy.xpath("//label[@for='case_sensitive']").click()
         cy.xpath("//button[normalize-space()='Search']").click()
         cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()})
-*/
- /*   it('Search in the Case sensitive ',()=>{
+
+     it('Search in the Case sensitive ',()=>{
         cy.xpath("//a[normalize-space()='Search']").click()
         cy.xpath("//span[@role='textbox']").type('Technology')
         cy.xpath("//a[@class='collapsed card-link']").click()
@@ -109,7 +108,7 @@ it('Search in the title of the course ',()=>{
     cy.get('.mb-1 > a').invoke('text').should('contain', 'Information Technology Summer Program')
 
 
-    })*/
+    })
 
     it('With all of the keywords ',()=>{
     cy.xpath("//a[normalize-space()='Search']").click()
