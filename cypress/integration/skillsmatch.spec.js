@@ -56,8 +56,7 @@ describe('cypress-xpath', () => {
         cy.xpath("//label[@for='124']").click()
         cy.xpath("//label[@for='131']").click()
         cy.xpath("//input[@name='submit']").click()
-<<<<<<< Updated upstream
-=======
+
         cy.get('[test-data="area_1"] > .row > .col-6 > label > span').invoke('text').should('contain', '(11/16)')
         cy.get('[test-data="area_2"] > .row > .col-6 > label > span').invoke('text').should('contain', '(12/12)')
         cy.get('[test-data="area_3"] > .row > .col-6 > label > span').invoke('text').should('contain', '(12/12)')
@@ -66,37 +65,27 @@ describe('cypress-xpath', () => {
         cy.get('[test-data="area_6"] > .row > .col-6 > label > span').invoke('text').should('contain', '18/20)')
 
 
->>>>>>> Stashed changes
     })
 
     // Search feature 
 
     
-    it('Search feature',()=>{
+    it('Direct Searching',()=>{
         cy.xpath("//a[normalize-space()='Search']").click()
         cy.xpath("//span[@role='textbox']").type('software')
         cy.xpath("//button[normalize-space()='Search']").click()
-<<<<<<< Updated upstream
-        cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()
-
+        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software')
+      
     })
 
-  it('Search in the title of the course ',()=>{
-    cy.xpath("//a[normalize-space()='Search']").click()
-    cy.xpath("//span[@role='textbox']").type('Diploma in Information Technology')
-    cy.xpath("//a[@class='collapsed card-link']").click()
-    cy.xpath("//input[@id='search_in_title']").click()
-    cy.xpath("//button[normalize-space()='Search']").click()
-    cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()})
-
-
-    it('Search in the Case sensitive ',()=>{
+    it('Search in the title of the course ',()=>{
         cy.xpath("//a[normalize-space()='Search']").click()
-        cy.xpath("//span[@role='textbox']").type('Technology')
+        cy.xpath("//span[@role='textbox']").type('Diploma in Information Technology')
         cy.xpath("//a[@class='collapsed card-link']").click()
-        cy.xpath("//label[@for='case_sensitive']").click()
+        cy.xpath("//input[@id='search_in_title']").click()
         cy.xpath("//button[normalize-space()='Search']").click()
-        cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()})
+       })
+
 
      it('Search in the Case sensitive ',()=>{
         cy.xpath("//a[normalize-space()='Search']").click()
@@ -104,37 +93,19 @@ describe('cypress-xpath', () => {
         cy.xpath("//a[@class='collapsed card-link']").click()
         cy.xpath("//label[@for='case_sensitive']").click()
         cy.xpath("//button[normalize-space()='Search']").click()
-        cy.get('[test-data="searchItem_1"] > .badge-info').invoke('text').should('contain', 'technology')
+        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'technology')
         })
 
 
-it('Search in the title of the course ',()=>{
-    cy.xpath("//a[normalize-space()='Search']").click()
-    cy.xpath("//span[@role='textbox']").type('Information Technology Summer Program')
-    cy.xpath("//a[@class='collapsed card-link']").click()
-    cy.xpath("//label[@for='search_in_title']").click()
-    cy.xpath("//button[normalize-space()='Search']").click()
-    cy.get('.mb-1 > a').invoke('text').should('contain', 'Information Technology Summer Program')
-
-
-=======
-        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software')
-      
->>>>>>> Stashed changes
-    })
-
-<<<<<<< Updated upstream
     it('With all of the keywords ',()=>{
-    cy.xpath("//a[normalize-space()='Search']").click()
-    cy.xpath("//span[@role='textbox']").type('Technology,software')
-    cy.xpath("//a[@class='collapsed card-link']").click()
-    cy.xpath("//label[@for='match_all']").click()
-    cy.xpath("//button[normalize-space()='Search']").click()
-    cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'technology','software')
-
+        cy.xpath("//a[normalize-space()='Search']").click()
+        cy.xpath("//span[@role='textbox']").type('Technology').type('{enter}').type('software').type('{enter}')
+        cy.xpath("//a[@class='collapsed card-link']").click()
+        cy.xpath("//label[@for='match_all']").click()
+        cy.xpath("//button[normalize-space()='Search']").click()
+        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'technology','software')
     })
     
-   
     it('Search feature translate',()=>{
         cy.xpath("//a[normalize-space()='Search']").click()
         cy.xpath("//a[@class='collapsed card-link']").click()
@@ -144,13 +115,6 @@ it('Search in the title of the course ',()=>{
         cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software')
 
     })
-
-   
-       
-  
-
 })
 })
-=======
 
->>>>>>> Stashed changes
