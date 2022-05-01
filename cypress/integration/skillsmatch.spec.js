@@ -2,7 +2,7 @@
 /// <reference path="..\..\node_modules\cypress-xpath\src\index.d.ts" />
 
 describe('cypress-xpath', () => {
-    context('elements', ()=>{
+    context('Test Cases', ()=>{
     beforeEach(() =>{
         cy.visit('https://skillsmatch.mdx.ac.uk/en/')
         cy.xpath("//input[@id='username']").type('Test Automation')
@@ -12,7 +12,7 @@ describe('cypress-xpath', () => {
     
     // Update my skills
 
-    it('Update my skills',()=>{
+    it('Update my skills Test Case',()=>{
         cy.xpath("//a[@href='/en/profile/']").click()
         cy.xpath("//a[@role='button'][normalize-space()='Update my skills']").click()
 
@@ -59,17 +59,21 @@ describe('cypress-xpath', () => {
         cy.xpath("//label[@for='124']").click()
         cy.xpath("//label[@for='131']").click()
         cy.xpath("//input[@name='submit']").click()
+
+
     })
 
     // Search feature 
 
-    
-    it('Search feature',()=>{
+  
+    it('Direct Searching',()=>{
         cy.xpath("//a[normalize-space()='Search']").click()
         cy.xpath("//span[@role='textbox']").type('software')
         cy.xpath("//button[normalize-space()='Search']").click()
-        cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()
+        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software')
+
 
     })
   })
 })
+
