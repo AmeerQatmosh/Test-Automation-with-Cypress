@@ -60,16 +60,26 @@ describe('cypress-xpath', () => {
         cy.xpath("//label[@for='131']").click()
         cy.xpath("//input[@name='submit']").click()
     })
-
+    
     // Search feature 
 
-    
-    it('Search feature',()=>{
+   
+    it('Search feature translate',()=>{
         cy.xpath("//a[normalize-space()='Search']").click()
-        cy.xpath("//span[@role='textbox']").type('software')
+        cy.xpath("//a[@class='collapsed card-link']").click()
+        cy.xpath("//select[@id='translateInput']").select(1)
+        cy.xpath("//span[@role='textbox']").type('برمجيات')
         cy.xpath("//button[normalize-space()='Search']").click()
-        cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()
+        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software')
 
     })
+
+   
+      
+    
+    
+    
+    
+   
   })
 })
