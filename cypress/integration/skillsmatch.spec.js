@@ -3,7 +3,7 @@ describe('cypress-xpath', () => {
     beforeEach(() =>{
         cy.visit('https://skillsmatch.mdx.ac.uk/en/')
         cy.xpath("//input[@id='username']").type('Test Automation')
-        cy.xpath("//input[@id='password']").type('najah285@edu')
+        cy.xpath("//input[@id='password']").type('najah285@edu', { sensitive: true })
         cy.xpath("//input[@value='Login']").click()
         })
     
@@ -56,6 +56,17 @@ describe('cypress-xpath', () => {
         cy.xpath("//label[@for='124']").click()
         cy.xpath("//label[@for='131']").click()
         cy.xpath("//input[@name='submit']").click()
+<<<<<<< Updated upstream
+=======
+        cy.get('[test-data="area_1"] > .row > .col-6 > label > span').invoke('text').should('contain', '(11/16)')
+        cy.get('[test-data="area_2"] > .row > .col-6 > label > span').invoke('text').should('contain', '(12/12)')
+        cy.get('[test-data="area_3"] > .row > .col-6 > label > span').invoke('text').should('contain', '(12/12)')
+        cy.get('[test-data="area_4"] > .row > .col-6 > label > span').invoke('text').should('contain', '(7/12)')
+        cy.get('[test-data="area_5"] > .row > .col-6 > label > span').invoke('text').should('contain', '(12/12)')
+        cy.get('[test-data="area_6"] > .row > .col-6 > label > span').invoke('text').should('contain', '18/20)')
+
+
+>>>>>>> Stashed changes
     })
 
     // Search feature 
@@ -65,6 +76,7 @@ describe('cypress-xpath', () => {
         cy.xpath("//a[normalize-space()='Search']").click()
         cy.xpath("//span[@role='textbox']").type('software')
         cy.xpath("//button[normalize-space()='Search']").click()
+<<<<<<< Updated upstream
         cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()
 
     })
@@ -105,8 +117,13 @@ it('Search in the title of the course ',()=>{
     cy.get('.mb-1 > a').invoke('text').should('contain', 'Information Technology Summer Program')
 
 
+=======
+        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software')
+      
+>>>>>>> Stashed changes
     })
 
+<<<<<<< Updated upstream
     it('With all of the keywords ',()=>{
     cy.xpath("//a[normalize-space()='Search']").click()
     cy.xpath("//span[@role='textbox']").type('Technology,software')
@@ -134,3 +151,6 @@ it('Search in the title of the course ',()=>{
 
 })
 })
+=======
+
+>>>>>>> Stashed changes
