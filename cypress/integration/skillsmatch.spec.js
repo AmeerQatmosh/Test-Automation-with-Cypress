@@ -115,6 +115,43 @@ describe('cypress-xpath', () => {
         cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software')
 
     })
+    it('Search feature',()=>{
+        cy.xpath("//a[normalize-space()='Search']").click()
+        cy.xpath("//span[@role='textbox']").type('software')
+        cy.xpath("//button[normalize-space()='Search']").click()
+        cy.get('[test-data="searchItem_1"]').find('[test-data="TotalMatches"]').invoke('text')
+        .then((text)=>{ 
+            var fullText = text;
+            var pattern = /[0-9]+/g;
+            var number = fullText.match(pattern);
+            console.log(number);
+            cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()
+            cy.visit('https://skillsmatch.mdx.ac.uk/en/course/5795?keywords=software')
+            // cy.xpath('/html/body/div[2]/div[1]/div[9]').should('contain','software').should('have.length.gte', number[0])
+            // cy.get('.container>div').eq(8).should('contain','software').should('have.length', number[0])
+
+            // cy.get('contains("software")').should('have.length.gte', number)
+
+           })
+
+
+        // cy.get('[test-data="searchItem_1"]').find('[test-data="TotalMatches"]').then(matches =>{
+
+        //     cy.xpath("//div[@class='container']//div[1]//div[1]//h4[1]//a[1]").click()
+        //     matches.get('contains("software")').should('have.length', 9)
+            // cy.get('contains("software")').should('have.length', 9)
+
+        // }); 
+
+        // cy.get('#viewport').find('div[id=message]').then(message => {
+        //     let wags = message;
+        //     cy.wrap(wags).as('wags')
+        //   });
+
+        // cy.get('.container > :nth-child(9)').
+        // cy.get('contains("software")').should('have.length', 9)
+
+})
 })
 })
 
