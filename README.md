@@ -60,7 +60,7 @@ _________________________________________________________________________
 
 Direct Searching
 
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/100388300/166172880-bc7bfed1-75d1-441e-b361-58bb5db1a446.png)
 
 
 <         cy.xpath("//a[normalize-space()='Search']").click() > --- to going to search box and click on it 
@@ -72,6 +72,63 @@ Direct Searching
 <        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software') > -- > chexk if the results contain software keyword 
 
 
+__________________________________________________________________________________________________________
+
+
+Case Sensitive : 
+the results in lable was small leter 
+
+![image](https://user-images.githubusercontent.com/100388300/166173510-53fef13f-ae89-44d9-94b7-e4c68d673e74.png)
+ 
+ 
+ 
+it('Search in the Case sensitive ',()=>{
+        cy.xpath("//a[normalize-space()='Search']").click() -------------> to going to search box and click on it 
+        
+        cy.xpath("//span[@role='textbox']").type('Technology')-----------> search on Technology keyword 
+        
+        cy.xpath("//a[@class='collapsed card-link']").click() --- > select advanced option 
+        
+       
+        cy.xpath("//label[@for='case_sensitive']").click() ------------------ > select case sensitive 
+        
+        cy.xpath("//button[normalize-space()='Search']").click() ------------------> click on search button 
+        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'technology') ------------ > compare if the results lable have the technology keyword in small letter 
+        
+        
+______________________________________________________________
+
+Search With All the keywords from advanced option 
+
+
+
+![image](https://user-images.githubusercontent.com/100388300/166173706-9a29bc5a-547f-4915-b1ec-78ab7f19679f.png)
+
+
+if enter 2 keywords to search the title must have these tow keywords in lables 
+
+we enter 'technology','software' 
+
+lable 1 must be 'technology'and the second lable in ewch result 'software'
+![image](https://user-images.githubusercontent.com/100388300/166173909-93e1c9b7-df28-42a4-9d18-08e37a18e9e8.png)
+
+
+and the result must be for all results 
+
+_______________________________________________________________________________________
+
+Search feature translate 
+
+![image](https://user-images.githubusercontent.com/100388300/166174069-eec76abf-1de1-4fd8-9d9f-7641675b0738.png)
+
+we enter arabic word (برمجيات)
+and translate to english .. all the results have software as a keyword
+ 
+ 
+ ![Uploading image.png…]()
+
+
+____________________________________________________________________________________
 
 
 
