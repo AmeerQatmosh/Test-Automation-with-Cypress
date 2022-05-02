@@ -150,7 +150,12 @@ and compare with the first result
 
 
 
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/100388300/166174971-4f106ba8-1952-4e45-ab39-521b94fe0b55.png)
 
+_____________________________________________________________________
+
+result 
+
+![Uploading image.png…]()
 
 
