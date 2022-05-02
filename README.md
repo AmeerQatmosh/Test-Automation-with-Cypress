@@ -1,11 +1,17 @@
 # Test-Automation-with-Cypress
+test run commands vidio : https://drive.google.com/drive/folders/1fS8vKIl0fXcEjx2ejG3dl6VB8LFBj3m4?fbclid=IwAR3-jlQ7klQZO21xHErPYpTMhqBrIhnAucD9JXoxP5RKcBg8o6oeWmKG3T4
+
 
 Automation Testing in Cypress 
 
-WHATS CYPRESS AND AUTOMATION TESTING 
+WHATS CYPRESS AND AUTOMATION TESTING Diff. 
+
+Cypress is a NodeJS-based test automation framework for the modern web. It uses JavaScript as a programming language. 
+
+Unlike other tools, the Cypress automation tool can be used for a variety of tests – unit tests, integration tests, end to end tests, API tests, etc. Cypress also comes with multiple in-built functionalities to make developers’ and QA’s jobs easier.
 
 
-
+__________________________________________________________________________________________________________________________________________
 Entering to skills match website 
 ![image](https://user-images.githubusercontent.com/100388300/166170949-f34b0c7b-ef51-43a1-bd55-4c8a434d26f8.png)
 
