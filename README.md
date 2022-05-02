@@ -131,10 +131,26 @@ we enter arabic word (برمجيات)
 and translate to english .. all the results have software as a keyword
  
  
- ![Uploading image.png…]()
+ ![image](https://user-images.githubusercontent.com/100388300/166174432-c1873056-a2ce-47fd-903b-96cee23a0395.png)
 
 
 ____________________________________________________________________________________
+
+MATCHED KEYWORDS 
+
+
+after enter keyword to search 
+in the result we have total mached as uou see
+![image](https://user-images.githubusercontent.com/100388300/166174672-98193b33-db7b-4147-93c8-bbf0a7510139.png)
+
+
+we take the number we have then we click in the link of this result
+and cheack inside the page the number of repeated word 
+and compare with the first result 
+
+
+
+![Uploading image.png…]()
 
 
 
