@@ -38,3 +38,5 @@ like this whay for all questions
 the result after that score like 16/16 ... 
 with stars rate 
 
+![Uploading image.png…]()
+
