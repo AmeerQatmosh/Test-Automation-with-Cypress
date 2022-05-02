@@ -38,5 +38,40 @@ like this whay for all questions
 the result after that score like 16/16 ... 
 with stars rate 
 
+![image](https://user-images.githubusercontent.com/100388300/166172148-843d4c41-dc82-4e7e-a68e-9dbfb7da8e90.png)
+
+________________________________________________________________________
+
+cheack if the area scores match with answered questons
+
+![image](https://user-images.githubusercontent.com/100388300/166172238-644e6693-5199-4665-a5f6-1e57dcd6b37f.png)
+
+
+In the update test case 
+ has a form with questions, the option above has a score of 0, and the last one, can be 5, 4 or 3
+ 
+ ![image](https://user-images.githubusercontent.com/100388300/166172275-0e8c727d-25d4-426e-939d-25bb1c1c8240.png)
+
+
+if we choose the last option the score = 4 .... 
+
+
+_________________________________________________________________________
+
+Direct Searching
+
 ![Uploading image.png…]()
+
+
+<         cy.xpath("//a[normalize-space()='Search']").click() > --- to going to search box and click on it 
+
+<  cy.xpath("//span[@role='textbox']").type('software') > ----> search on software keyword 
+
+< cy.xpath("//button[normalize-space()='Search']").click() > ---> click on search button 
+
+<        cy.get('[test-data="MatchedKeywords"]').invoke('text').should('contain', 'software') > -- > chexk if the results contain software keyword 
+
+
+
+
 
