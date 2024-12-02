@@ -150,8 +150,28 @@ describe('cypress-xpath', () => {
 
         // cy.get('.container > :nth-child(9)').
         // cy.get('contains("software")').should('have.length', 9)
+        
+//check Sort based on user reviews
+it('rating', () => {  
+    cy.get('[id=username]').type('kev')
+    cy.get('[id=password]').type('NnN82tpj9YR')
+    cy.get('[value=Login]').click()   
+//make sure that the rate for the course is sorted and have the right rate by comparing it Equal and Greater than
+    cy.get("#searchFrom > div:nth-child(2) > div.col-7 > tags > span").type("planning");
+    cy.get(".card-link").click({ force: true });
+    cy.get('[test-data=sort_by_user_reviews]').click({ force: true })
+    cy.get('[test-data=searchButton]').click({ force: true })
+    cy.get("#search-result").click({ force: true })
+
+    cy.get(['#search-result > div:nth-child(2) > div.ratingme.smallRate'])
+        .its('length')
+        .then((size) => {
+            cy.get(['#search-result > div:nth-child(1) > div.ratingme.smallRate'])
+                .its('length')
+                .should('be.gte', size)
+        })
+})
+})
+})
 
 })
-})
-})
-
